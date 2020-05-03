@@ -9,7 +9,6 @@ var currentHour = moment().format("HH");
 //determining the number of children of the scheduler div (number of hours in the day)
 // https://stackoverflow.com/questions/250688/count-immediate-child-div-elements-using-jquery
 var scheduleHours = $("#scheduler > div");
-console.log(scheduleHours);
 //loop through the hours
 for (i = 0; i < scheduleHours.length; i++) {
   var hour = $(scheduleHours[i]);
