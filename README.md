@@ -45,16 +45,21 @@ Local storage is still a pain. I'm not quite wrapping my mind around how best to
 
 ## Pulling from local storage
 
-This one was a bit tricky for me. I had trouble figuring out what to loop through, since I wasn't creating an array of strings to add to local storage. I realized that I needed to find a way to loop through my scheduler div and create an object that contained all of its children so I had something to loopthrough. I found a bit of help online for this one. Here is the code: var scheduleHours = \$("#scheduler > div");. By using the ">" character, I was able to isolate the children (still sounds creepy. . . ) of "#scheduler."
+This one was a bit tricky for me. I had trouble figuring out what to loop through, since I wasn't creating an array of strings to add to local storage. I realized that I needed to find a way to loop through my scheduler div and create an object that contained all of its children so I had something to loopthrough. I found a bit of help online for this one. Here is the code:
+
+    var scheduleHours = \$("#scheduler > div"); 
+
+By using the ">" character, I was able to isolate the children (still sounds creepy. . . ) of "#scheduler."
 
 The loop itself was a bit different. I needed it to start at 9, since that was the id of the first child element of #scheduler, and it went to 17, I had to set x=9, and loop until x = scheduleHours + 9.
 
 The next if statement was probably the bit of code I am most proud of. I needed to figure out how to see if x was equal to the ID of an element. So, I ended up piecing together a few things I found after doing some resarch. Here's the code I ended up with:
-if (x === parseInt($("#" + x).attr("id"))) {
-    $("#" + x)
-.children("#calendarEvent")
-.text(localStorage.getItem(x));
-}
+
+    if (x === parseInt($("#" + x).attr("id"))) {
+        $("#" + x)
+        .children("#calendarEvent")
+        .text(localStorage.getItem(x));
+    }
 
 I used parseInt because I knew that I needed an integer value. I found the \$("#" = x) and it was a gamechanger. I could now loop through the IDs and pull them as integers. And, for each ID, I could check if it had a corresponding entry in local storage and append as necessary.
 
