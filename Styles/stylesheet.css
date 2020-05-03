@@ -54,7 +54,6 @@
   border-bottom: dashed 1px black;
   border-right: solid 1px black;
   border-left: none;
-  margin-right: 0px !important;
 }
 /* set color, width, and height for calendar event text input. Height applies to all other lines inside of each hour div */
 #calendarEvent {

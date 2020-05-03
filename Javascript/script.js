@@ -9,7 +9,7 @@ var currentHour = moment().format("HH");
 //determining the number of children of the scheduler div (number of hours in the day)
 // https://stackoverflow.com/questions/250688/count-immediate-child-div-elements-using-jquery
 var scheduleHours = $("#scheduler > div");
-
+console.log(scheduleHours);
 //loop through the hours
 for (i = 0; i < scheduleHours.length; i++) {
   var hour = $(scheduleHours[i]);
@@ -20,14 +20,9 @@ for (i = 0; i < scheduleHours.length; i++) {
     $("#" + timeSlot)
       .children("#calendarEvent")
       .css({ "background-color": "gray" });
-    $("#" + timeSlot)
-      .children("#calendarEvent")
-      .css({ "background-color": "gray" });
+
     //see if it's the current hour
   } else if (timeSlot === currentHour) {
-    $("#" + timeSlot)
-      .children("#calendarEvent")
-      .css({ "background-color": "white" });
     $("#" + timeSlot)
       .children("#calendarEvent")
       .css({ "background-color": "white" });
@@ -55,3 +50,11 @@ for (x = 9; x < scheduleHours.length + 9; x++) {
       .text(localStorage.getItem(x));
   }
 }
+
+//clear cal function. Clears calendar and reloads page
+$("#clearCal").click(function () {
+  localStorage.clear();
+
+  //https://www.tutorialrepublic.com/faq/how-to-refresh-a-page-with-jquery.php
+  location.reload();
+});
