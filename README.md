@@ -1,10 +1,7 @@
 # 05_HW
 
-## What even is a "workday"?
 
-Workdays seem so fluid these days. This assignment almost seemed like taunting! But, in the never endign hunt to write clean code, this assignment produced some solutions that I am pretty proud of.
-
-## HTML
+## Start with the HTML structure
 
 The HTML on this was pretty straighforward
 
@@ -15,7 +12,7 @@ The HTML on this was pretty straighforward
 5. create a structure for each hour including: time stamp, textarea, and save button
 6. copy and paste it for each hour of the work day and edit text as needed
 
-## IDs for days!
+## Checking IDs
 
 This was the first project where I felt that I did a good job of fleshing out the whole project with pseudo-coding. In the pseudo-coding step, I realized that being vigilant about assigning IDs was the key to writing clean code. Every section got IDs, which made the JS and CSS so much easier.
 
@@ -23,9 +20,6 @@ This was the first project where I felt that I did a good job of fleshing out th
 
 I had one issue with my HTML, that I later caught and fixed. For the calendarEvent, I first created a div, and then put the textarea inside of that div. This meant that the text area didn't span the whole width between the time stamp and the save button. I figured out some ways to get it to stretch using negative margins in CSS and a bit of redundant code in JS. After I took a break and came back to the code, I realized I could just elimenate the parent DIV delete the superfluous code. Ever vigilant on the hunt for clean code!
 
-## I still hate CSS
-
-Am I the only one who just really doesn't like CSS? It's so tedious. Fortunately, this didn't require too much CSS. Basically, I just needed to set some heights, text positions, and colors. It took a little bit longer than I would have liked, but I got it done.
 
 ## JS
 
@@ -41,7 +35,7 @@ The rub came in trying to get the ID value as an integer. However, I realized th
 
 ## Local Storage
 
-Local storage is still a pain. I'm not quite wrapping my mind around how best to utilize it, but I think I'm getting there. I created an event listener for the save buttons to add to local storage. First, using "this" and some dom traversing, I was able to get a the value of the parent ID, which, again, is a numeric value equal to the military time hour value. I then set that as the key value for local storage. Next, again using dom traversing, I pulled the value from the corresponding text area, and set that to the value for local storage. With these set, my local storage was now organized with the hour as the key and the text input as the value.
+I created an event listener for the save buttons to add to local storage. First, using "this" and some dom traversing, I was able to get a the value of the parent ID, which, again, is a numeric value equal to the military time hour value. I then set that as the key value for local storage. Next, again using dom traversing, I pulled the value from the corresponding text area, and set that to the value for local storage. With these set, my local storage was now organized with the hour as the key and the text input as the value.
 
 ## Pulling from local storage
 
